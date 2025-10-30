@@ -1,0 +1,57 @@
+---
+import HTMLIcon from "./icons/HTML.astro";
+const TAGS = {
+    HTML: {
+        name: "HTML:5",
+        class: "bg-black text-white",
+        icon: HTMLIcon,
+    },
+    C: {
+        name: "C",
+        class: "bg-black text-white",
+        icon: null,
+    },
+};
+const PROJECTS = [
+    {
+        title: "Pagina Web Violentometro",
+        description:
+            "Pagina Web para informar a las personas sobre la violencia de genero y como saber si estan en una relacion toxica o abusiva.",
+        image: "/projects/Violentometro.webp",
+        tags: [TAGS.HTML],
+    },
+    {
+        title: "PIC Calculator",
+        description:
+            "Calculator made in Assembly Language for PIC Microcontrollers, using MPLAB X IDE and Proteus for simulation.",
+        image: "/projects/Assembly.webp",
+        tags: ["Assembly", "Proteus", "MPLAB"],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags }) => (
+        <article class="mb-8">
+            <h3 class="text 2-xl font-semibold text-yellow-200 mb-2">
+                {title}
+            </h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-4 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class}`}>
+                            <tag.icon class="size:4 inline-block mr-2" />
+                        {tag.name}
+                        </span>
+                        </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/10"
+                src={image}
+                alt={`Image of the Project{image}`}
+            />
+        </article>
+    ))
+}

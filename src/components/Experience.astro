@@ -1,29 +1,23 @@
 ---
-import type { ACTION_ERROR_CODES } from "astro:actions";
+import ExperienceItem from './ExperienceItem.astro';
 
 const Experience = [
     {
-        date: "February 2022",
-        title: "Application UI code in Tailwind CSS",
+        date: "2024-2026",
+        title: "Ingenieria en Software - Universidad Internacional de las Américas",
         description:
-            "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+            "Actualmente cursando la carrera de Ingenieria en Software en la Universidad Internacional de las Américas, con fecha estimada de graduación en 2026",
     },
     {
-        date: "March 2022",
-        title: "Marketing UI design in Figma",
+        date: "2019-2021",
+        title: "Diploma en Educacion Parauniversitaria en Electronica - Colegio Universitario de Cartago",
         description:
-            "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
-    {
-        date: "April 2022",
-        title: "E-Commerce UI code in Tailwind CSS",
-        description:
-            "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
-    },
+            "Completé un diploma en Educación Parauniversitaria con especialización en Electrónica, adquiriendo conocimientos fundamentales en circuitos electrónicos, programación lógica y habilidades técnicas relacionadas.",
+    }
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
+<ol class="relative border-s border-gray-200 ml-3">
     {
         Experience.map((experiencie) => (
             <li class="mb-10 ms-4">

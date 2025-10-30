@@ -7,19 +7,23 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/Github.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/Section.astro";
+import SchoolIcon from "../components/icons/School.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout>
-	<main>
+	<main class="px-4">
 
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer class="py-44 pb-32">
 			<img
 				class="rounded-full w-12 h-12 mb-4"
 				src="https://i.pinimg.com/736x/6d/9a/82/6d9a827501cf779b9926ee6fce4b3192.jpg"
 				alt="foto"
 			/>
 			<h1
-				class="text-white text-6xl flex flex-row gap-x-4 pb-4 items-center"
+				class="text-white text-3xl md:text-4xl lg:text-5xl flex flex-row gap-x-4 pb-6 lg:pb:10"
 			>
 				Eugene Li Liang
 				<a
@@ -31,33 +35,44 @@ import Experience from "../components/Experience.astro";
 					<Badge>Disponible para trabajar</Badge></a
 				>
 			</h1>
-			<h2 class="text-2xl opacity-80 text-wrap">
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
 				<span>Estudiante de Ingenieria en Software.</span><span
 					>desarrollador web con bastantes ganas de aprender y crecer
 					profesionalmente.
 				</span>
 			</h2>
 
-			<nav class="flex gap-x-4 mt-7">
+			<nav class="flex gap-4 mt-7 flex-wrap">
 				<SocialPill
 					href="https://www.linkedin.com/in/eugene-li-liang-51837720b/"
 				>
-					<LinkedInIcon class="w-6 h-6" />
+					<LinkedInIcon class="size:4 md:size-6" />
 					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/L1mItrIx">
-					<GithubIcon class="w-6 h-6" />
+					<GithubIcon class="size:4 md:size-6" />
 					Github
 				</SocialPill>
 				<SocialPill href="mailto:kazeltro@gmail.com">
-					<MailIcon class="w-6 h-6" />
+					<MailIcon class="size:4 md:size-6" />
 					kazeltro@gmail.com
 				</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
 
-		<section>
+		<SectionContainer id="education">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<SchoolIcon class="size-7" />
+				Educación</h2>
 			<Experience />
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7" />
+				Proyectos Destacados
+			</h2>
+			<Projects />
+		</SectionContainer>
 	</main>
 </Layout>

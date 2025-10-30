@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
+import Footer from '../components/Footer.astro';
 
 interface Props{
 	title?: string;
@@ -21,12 +22,13 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>Eugene Li Liang - Desarrollador y Programador de software</title>
 	</head>
-	<body>
-		<Header />
+	<body class="px-4">
 		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 
 		bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 		</div>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -42,5 +44,11 @@ const {
 		justify-content: center;
 		flex-direction: column;
 		min-height: 100vh;
+		scroll-behavior: smooth;
+	}
+	@media (prefers-reduce-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>
