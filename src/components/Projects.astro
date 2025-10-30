@@ -1,32 +1,83 @@
 ---
 import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import CppIcon from "./icons/Cpp.astro";
+import PHPIcon from "./icons/PHP.astro";
+import ProteusIcon from "./icons/Proteus.astro";
+import AssemblyIcon from "./icons/Assembly.astro";
+import SQLIcon from "./icons/SQL.astro";
 const TAGS = {
     HTML: {
         name: "HTML:5",
-        class: "bg-black text-white",
+        class: "bg-[#003159] text-white",
         icon: HTMLIcon,
     },
-    C: {
-        name: "C",
-        class: "bg-black text-white",
+    CSS:{
+        name: "CSS:3",
+        class: "bg-[#003159] text-white",
+        icon: CSSIcon,
+    },
+    Cpp: {
+        name: "C++",
+        class: "bg-[#003159] text-white",
+        icon: CppIcon,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-[#003159] text-white",
+        icon: PHPIcon,
+    },
+    Proteus: {
+        name: "Proteus",
+        class: "bg-[#003159] text-white",
+        icon: ProteusIcon,
+    },
+    Assemnbly: {
+        name: "Assembly",
+        class: "bg-[#003159] text-white",
+        icon: AssemblyIcon,
+    },
+    SQL: {
+        name: "SQL",
+        class: "bg-[#003159] text-white",
+        icon: SQLIcon,
+    },
+    Workbench: {
+        name: "MySQL Workbench",
+        class: "bg-[#003159] text-white",
         icon: null,
     },
 };
 const PROJECTS = [
     {
-        title: "Pagina Web Violentometro",
+        title: "Web Site - Violentometro",
         description:
-            "Pagina Web para informar a las personas sobre la violencia de genero y como saber si estan en una relacion toxica o abusiva.",
+            "A responsive website created with HTML and CSS that provides information about the Violentometro tool, which helps identify and prevent various forms of violence in relationships.",
         image: "/projects/Violentometro.webp",
-        tags: [TAGS.HTML],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP],
+    },
+    {
+        title: "Database Design for an Hotel Management System",
+        description:
+            "Designed and implemented a relational database for a hotel management system using SQL, focusing on efficient data storage and retrieval for reservations, customers, and room management.",
+        image: "/public/projects/Database.webp",
+        tags: [TAGS.SQL, TAGS.Workbench],
     },
     {
         title: "PIC Calculator",
         description:
             "Calculator made in Assembly Language for PIC Microcontrollers, using MPLAB X IDE and Proteus for simulation.",
         image: "/projects/Assembly.webp",
-        tags: ["Assembly", "Proteus", "MPLAB"],
+        tags: [TAGS.Assemnbly, TAGS.Proteus],
     },
+    {
+        title: "Line Follower Robot",
+        description:
+            "A personal portfolio website built using Astro framework to showcase projects, skills, and experience as a software developer.",
+        image: "/projects/Portfolio.webp",
+        tags: [TAGS.Cpp,],
+    }
+
 ];
 ---
 
@@ -40,9 +91,9 @@ const PROJECTS = [
             <ul class="flex gap-x-4 flex-row">
                 {tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class}`}>
-                            <tag.icon class="size:4 inline-block mr-2" />
-                        {tag.name}
+                        <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} px-3 py-2 mb-3`}>
+                            {tag.icon && <tag.icon class="size-4 inline-block" />}
+                            {tag.name}
                         </span>
                         </li>
                 ))}
@@ -50,7 +101,7 @@ const PROJECTS = [
             <img
                 class="rounded shadow-2xl shadow-white/10"
                 src={image}
-                alt={`Image of the Project{image}`}
+                alt={`No image at the moment`}
             />
         </article>
     ))

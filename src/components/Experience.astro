@@ -4,24 +4,24 @@ import ExperienceItem from './ExperienceItem.astro';
 const Experience = [
     {
         date: "2024-2026",
-        title: "Ingenieria en Software - Universidad Internacional de las Américas",
+        title: "Bachelor Degree in Software Engineering - Universidad Internacional de las Américas",
         description:
-            "Actualmente cursando la carrera de Ingenieria en Software en la Universidad Internacional de las Américas, con fecha estimada de graduación en 2026",
+            "Actuallyly pursuing a Bachelor's Degree in Software Engineering, focusing on software development, algorithms, and system design.",
     },
     {
         date: "2019-2021",
-        title: "Diploma en Educacion Parauniversitaria en Electronica - Colegio Universitario de Cartago",
+        title: "Diploma in Higher Education in Electronic  - Colegio Universitario de Cartago",
         description:
-            "Completé un diploma en Educación Parauniversitaria con especialización en Electrónica, adquiriendo conocimientos fundamentales en circuitos electrónicos, programación lógica y habilidades técnicas relacionadas.",
+            "Completed a Diploma in Higher Education in Electronics, covering topics such as circuit design, microcontrollers, and embedded systems.",
     }
 ];
 ---
 
 <ol class="relative border-s border-gray-200 ml-3">
     {
-        Experience.map((experiencie) => (
+        Experience.map((experience) => (
             <li class="mb-10 ms-4">
-                <ExperienceItem {...experiencie} />
+                <ExperienceItem {...experience} />
             </li>
         ))
     }
