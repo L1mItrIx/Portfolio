@@ -1,23 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
-import Badge from '../components/Badge.astro';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/PillBtn.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout>
 	<main>
 
 		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<img
+				class="rounded-full w-12 h-12 mb-4"
+				src="https://i.pinimg.com/736x/6d/9a/82/6d9a827501cf779b9926ee6fce4b3192.jpg"
+				alt="foto"
+			/>
+			<h1
+				class="text-white text-6xl flex flex-row gap-x-4 pb-4 items-center"
+			>
+				Eugene Li Liang
+				<a
+					href="https://www.linkedin.com/in/eugene-li-liang-51837720b/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+					>
+					<Badge>Disponible para trabajar</Badge></a
+				>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-wrap">
+				<span>Estudiante de Ingenieria en Software.</span><span
+					>desarrollador web con bastantes ganas de aprender y crecer
+					profesionalmente.
+				</span>
+			</h2>
 
+			<nav class="flex gap-x-4 mt-7">
+				<SocialPill
+					href="https://www.linkedin.com/in/eugene-li-liang-51837720b/"
+				>
+					<LinkedInIcon class="w-6 h-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/L1mItrIx">
+					<GithubIcon class="w-6 h-6" />
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:kazeltro@gmail.com">
+					<MailIcon class="w-6 h-6" />
+					kazeltro@gmail.com
+				</SocialPill>
+			</nav>
 		</section>
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">Eugene Li Liang
-			<div class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></div></h1>
-		<h2 class="text-xl">Estudiante con experiencia trabajando</h2>
 
-		<ul>
-
-		</ul>
+		<section>
+			<Experience />
+		</section>
 	</main>
 </Layout>
